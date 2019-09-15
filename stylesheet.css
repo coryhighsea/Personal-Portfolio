@@ -1,0 +1,50 @@
+
+
+	.text {
+		text-align: center;
+		font-family: Georgia;
+	}
+	.header{
+		color: white;
+	}
+	body{
+		background: rgb(201, 240, 238);
+		/* border: 15px solid rgb(78, 133, 133); */
+		margin: auto;
+		/* padding: 30px; */
+		padding-top: 70px;
+	}
+.jumbotron{
+	background: rgb(64, 119, 114);
+    color: white;s
+}
+p {
+    font-family: Georgia;
+    font-size: 20px;
+
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+.button:hover {
+	color: gray;
+}
+/* #button{
+	background-color: green;
+	float: right;
+	color: white;
+} */
+#button {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	float: right;
+  }
