@@ -17,8 +17,8 @@
 		 
 	 
 		 </script>
-		<script src="bootstrap.js">
-		</script>
+		<!-- <script src="bootstrap.js">
+		</script> -->
 <style>
 
 		#mapid{
@@ -84,8 +84,22 @@
 					 <script>
 
 
+var mapboxAttribution = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+var mapboxUrl =  'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZHRjMiIsImEiOiJjajM0bGhtdWMwMXMyMndvOTNhMTV5bGlwIn0.P982OmG7OY8ETeL971l1Ww';
 
-        var mymap = L.map('mapid').setView([50.923, 6.94], 5);
+var grayscale = L.tileLayer(mapboxUrl, {id: 'mapbox.light', attribution: mapboxAttribution}),
+	satellite = L.tileLayer(mapboxUrl, {id: 'mapbox.satellite', attribution: mapboxAttribution}),
+
+	streets   = L.tileLayer(mapboxUrl, {id: 'mapbox.streets', attribution: mapboxAttribution});
+	
+
+var mymap = L.map('mapid', {
+	center: [50.923, 6.94],
+	zoom: 5,
+	 layers: [streets]
+});
+
+        // var mymap = L.map('mapid').setView([50.923, 6.94], 5);
         var marker = L.marker([51.5, -0.09]).addTo(mymap) // London
         var marker1 = L.marker([50.8, 4.36]).addTo(mymap) // Brussels
         var marker2 = L.marker([52.3, 4.9]).addTo(mymap) // Amsterdam
@@ -139,11 +153,6 @@
         var marker50 = L.marker([47.5, -122]).addTo(mymap) //Seattle
 
 
-	// 	var popup = L.popup()
-	// .setLatLng([51.5, -0.09])
-	// .setContent("I am a standalone popup.")
-	// .openOn(mymap);
-
 	marker.bindPopup("<b>London</b><br>Fish n Chips");
 	marker1.bindPopup("<b>Brussels</b><br>Chocolate and beer");
 	marker2.bindPopup("<b>Amsterdam</b><br>Canals and bikes");
@@ -190,12 +199,34 @@ function onMapClick(e) {
 mymap.on('click', onMapClick);
 
 
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		maxZoom: 18,
-		id: 'mapbox.streets',
-		accessToken: 'pk.eyJ1IjoiZHRjMiIsImEiOiJjajM0bGhtdWMwMXMyMndvOTNhMTV5bGlwIn0.P982OmG7OY8ETeL971l1Ww'
-	}).addTo(mymap);
+
+
+
+var baseMaps = {
+	"Grayscale": grayscale,
+	"Satellite": satellite,
+	"Streets": streets
+};
+
+
+
+L.control.layers(baseMaps).addTo(mymap);
+
+
+var baseMaps = {
+	"<span style='color: gray'>Grayscale</span>": grayscale,
+	"Streets": streets,
+	"Satellite": satellite
+};
+
+
+
+    //     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+	// 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	// 	maxZoom: 18,
+	// 	id: 'mapbox.streets',
+	// 	accessToken: 'pk.eyJ1IjoiZHRjMiIsImEiOiJjajM0bGhtdWMwMXMyMndvOTNhMTV5bGlwIn0.P982OmG7OY8ETeL971l1Ww'
+	// }).addTo(mymap);
 
     </script>		
 
