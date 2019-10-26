@@ -28,6 +28,8 @@
 	
 		}
 		</style>
+		<script src="cities.js">
+			</script>
 	</head>
 	<body>
 			<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -82,6 +84,17 @@
 
 							
 					 <script>
+// var littleton = L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.'),
+// 	denver    = L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.'),
+// 	aurora    = L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.'),
+//     golden    = L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.'),
+//     amsterdam = L.marker([52.3699, 4.8982]).bindPopup('<b>Amsterdam</b><br><img width="200px" src="images/amsterdam (1).jpg">'),
+//     pinchercreek = L.marker([49.31, -114.41]).bindPopup('<b>Castle Mountain</b><br><img width="200px" src="https://lh3.googleusercontent.com/nYt8bv_sNCc2zVQ3cW_7AN1N_CXfa46uF_CKpa2XnH7PXvu6IUEfh6cJVuDP5nl-UJaOaLbRu7MTDT2k5T2UsUDsHoyt0khy5o6T-H4hntdoeXzhomdxPZ3LN5MlD5THvASzQgAiEK_S7RPVj9joIkMNkaHcgoHXHxusoaWpeUvUOBPfPZs60iuHAkK-fAuJOLpvdjq-7Vau3LnW-_Yjdippzjew_hkPu2YLhV02xx1Tx0guSPXAsG90FVNolel4H3L-T0s1TYSjfTvyIpx60C7QSe3QcJypsODO012VR5npjyaMyasfnm7WTbD_vv1xg976GoKRJtAVZimqr7FK6BEddQSTrCheJLv8zFiKcCRSBC_SSv3LIiaicP7Kknvi0srNRKCl6x8eGz3btVObAPxknW0W3pqqlpzrNLmEFcX5MUA5Xg3YNPBOEUovirf5Xhl969kiqtPGzVr442TP9SeJvxPDDAmucGaD7tQeS3SeaZG5AyXlzDp2U-wodxDT3RiiFFuUAOvZlNm0qjWeAnu7djZ4MInxfLsH2TJ0QMqrcSvyhVHC28gKKrCIrHRm4usPE-z2tW_LFdiheACgpQVVcVk-srMGcx59KcSYtd99DtogS3di_drh1AS05p8XPfqk8lO6j_nHKEbFkrK6hnKQCY11EEFHO7bQUVvQrFbz2fMS-UHxnY5P=w493-h657-no">');
+
+
+
+// 	var cities = L.layerGroup([littleton, denver, aurora, golden, amsterdam, pinchercreek]);
+    
 
 
 var mapboxAttribution = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
@@ -96,95 +109,95 @@ var grayscale = L.tileLayer(mapboxUrl, {id: 'mapbox.light', attribution: mapboxA
 var mymap = L.map('mapid', {
 	center: [50.923, 6.94],
 	zoom: 5,
-	 layers: [streets]
+	 layers: [streets, cities]
 });
 
         // var mymap = L.map('mapid').setView([50.923, 6.94], 5);
-        var marker = L.marker([51.5, -0.09]).addTo(mymap) // London
-        var marker1 = L.marker([50.8, 4.36]).addTo(mymap) // Brussels
-        var marker2 = L.marker([52.3, 4.9]).addTo(mymap) // Amsterdam
-        var marker3 = L.marker([50.923, 6.94]).addTo(mymap) // Cologne
-        var marker4 = L.marker([52.5, 13.4]).addTo(mymap) // Berlin
-        var marker5 = L.marker([51.06, 13.74]).addTo(mymap) // Dresden
-        var marker6 = L.marker([50.08, 14.4]).addTo(mymap) // Prague
-        var marker7 = L.marker([48.12, 11.56]).addTo(mymap) // Munich
-        var marker8 = L.marker([48.19, 16.4]).addTo(mymap) // Vienna
-        var marker9 = L.marker([45.44, 12.33]).addTo(mymap) // Venice
-        var marker10 = L.marker([46.95, 7.44]).addTo(mymap) // Bern
-        var marker11 = L.marker([45.43, 10.99]).addTo(mymap) // Verona
-        var marker12 = L.marker([41.37, 2.15]).addTo(mymap) // Barcelona
-        var marker13 = L.marker([40.39, -3.7]).addTo(mymap) // Madrid
-        var marker14 = L.marker([49.45, 11.08]).addTo(mymap) // Nuremburg
-        var marker15 = L.marker([50.11, 8.67]).addTo(mymap) // Frankfurt
-        var marker16 = L.marker([53.55, 10.01]).addTo(mymap) // Hamburg
-        var marker17 = L.marker([52.2, 21]).addTo(mymap) // Warsaw
-        var marker18 = L.marker([51.22, 6.78]).addTo(mymap) // Dusseldorf
-        var marker19 = L.marker([47.49, 19.04]).addTo(mymap) // Budapest
-        var marker20 = L.marker([48.09, 20.788]).addTo(mymap) // Miskolc
-        var marker21 = L.marker([41.01, 28.96]).addTo(mymap) // Instanbul
-        var marker22 = L.marker([37.97, 23.7]).addTo(mymap) // Athens
-        var marker23 = L.marker([37.7, 23.34]).addTo(mymap) // Agistri
-        var marker24 = L.marker([51.9, -.263]).addTo(mymap) // Stevenage
-        var marker25 = L.marker([13.72, 100.35]).addTo(mymap) // Bangkok
-        var marker26 = L.marker([7.83, 98.08]).addTo(mymap) // Phuket
-        var marker27 = L.marker([51, -114]).addTo(mymap) //Calgary
-        var marker28 = L.marker([52.3, -113.8]).addTo(mymap) //Red Deer
-        var marker29 = L.marker([53.5, -113.5]).addTo(mymap) //Edmonton
-        var marker30 = L.marker([49.2, -123]).addTo(mymap) //Vancouver
-        var marker31 = L.marker([49.9, -119.5]).addTo(mymap) //Kelowna
-        var marker32 = L.marker([55.2, -118.8]).addTo(mymap) //Grande Prairie
-        var marker33 = L.marker([52.1, -106.7]).addTo(mymap) //Saskatoon
-        var marker34 = L.marker([50.4, -104.5]).addTo(mymap) //Regina
-        var marker35 = L.marker([49.9, -97.2]).addTo(mymap) //Winnipeg
-        var marker36 = L.marker([48.4, -89.2]).addTo(mymap) //Thunder Bay
-        var marker37 = L.marker([45.4, -75.7]).addTo(mymap) //Ottawa
-        var marker38 = L.marker([45.5, -73.5]).addTo(mymap) //Montreal
-        var marker39 = L.marker([43.6, -79.4]).addTo(mymap) //Toronto
-        var marker40 = L.marker([43.1, -79.1]).addTo(mymap) //Niagra Falls
-        var marker41 = L.marker([46.2, -63.1]).addTo(mymap) //Charlettetown
-        var marker42 = L.marker([44.6, -63.5]).addTo(mymap) //Halifax
-        var marker43 = L.marker([46, -66.6]).addTo(mymap) //Fredricton
-        var marker44= L.marker([25.9, -80.2]).addTo(mymap) //Miami
-        var marker45 = L.marker([26.6, -81.9]).addTo(mymap) //Fort Myers
-        var marker46 = L.marker([33.9, -118]).addTo(mymap) //LA 
-        var marker47 = L.marker([33.4, -112]).addTo(mymap) //Pheonix
-        var marker48 = L.marker([20.6, -87.1]).addTo(mymap) //Playa del Carmen
-        var marker49 = L.marker([24.5, -81.8]).addTo(mymap) //Key West
-        var marker50 = L.marker([47.5, -122]).addTo(mymap) //Seattle
+    //     var marker = L.marker([51.5, -0.09]).addTo(mymap) // London
+    //     var marker1 = L.marker([50.8, 4.36]).addTo(mymap) // Brussels
+    //     var marker2 = L.marker([52.3, 4.9]).addTo(mymap) // Amsterdam
+    //     var marker3 = L.marker([50.923, 6.94]).addTo(mymap) // Cologne
+    //     var marker4 = L.marker([52.5, 13.4]).addTo(mymap) // Berlin
+    //     var marker5 = L.marker([51.06, 13.74]).addTo(mymap) // Dresden
+    //     var marker6 = L.marker([50.08, 14.4]).addTo(mymap) // Prague
+    //     var marker7 = L.marker([48.12, 11.56]).addTo(mymap) // Munich
+    //     var marker8 = L.marker([48.19, 16.4]).addTo(mymap) // Vienna
+    //     var marker9 = L.marker([45.44, 12.33]).addTo(mymap) // Venice
+    //     var marker10 = L.marker([46.95, 7.44]).addTo(mymap) // Bern
+    //     var marker11 = L.marker([45.43, 10.99]).addTo(mymap) // Verona
+    //     var marker12 = L.marker([41.37, 2.15]).addTo(mymap) // Barcelona
+    //     var marker13 = L.marker([40.39, -3.7]).addTo(mymap) // Madrid
+    //     var marker14 = L.marker([49.45, 11.08]).addTo(mymap) // Nuremburg
+    //     var marker15 = L.marker([50.11, 8.67]).addTo(mymap) // Frankfurt
+    //     var marker16 = L.marker([53.55, 10.01]).addTo(mymap) // Hamburg
+    //     var marker17 = L.marker([52.2, 21]).addTo(mymap) // Warsaw
+    //     var marker18 = L.marker([51.22, 6.78]).addTo(mymap) // Dusseldorf
+    //     var marker19 = L.marker([47.49, 19.04]).addTo(mymap) // Budapest
+    //     var marker20 = L.marker([48.09, 20.788]).addTo(mymap) // Miskolc
+    //     var marker21 = L.marker([41.01, 28.96]).addTo(mymap) // Instanbul
+    //     var marker22 = L.marker([37.97, 23.7]).addTo(mymap) // Athens
+    //     var marker23 = L.marker([37.7, 23.34]).addTo(mymap) // Agistri
+    //     var marker24 = L.marker([51.9, -.263]).addTo(mymap) // Stevenage
+    //     var marker25 = L.marker([13.72, 100.35]).addTo(mymap) // Bangkok
+    //     var marker26 = L.marker([7.83, 98.08]).addTo(mymap) // Phuket
+    //     var marker27 = L.marker([51, -114]).addTo(mymap) //Calgary
+    //     var marker28 = L.marker([52.3, -113.8]).addTo(mymap) //Red Deer
+    //     var marker29 = L.marker([53.5, -113.5]).addTo(mymap) //Edmonton
+    //     var marker30 = L.marker([49.2, -123]).addTo(mymap) //Vancouver
+    //     var marker31 = L.marker([49.9, -119.5]).addTo(mymap) //Kelowna
+    //     var marker32 = L.marker([55.2, -118.8]).addTo(mymap) //Grande Prairie
+    //     var marker33 = L.marker([52.1, -106.7]).addTo(mymap) //Saskatoon
+    //     var marker34 = L.marker([50.4, -104.5]).addTo(mymap) //Regina
+    //     var marker35 = L.marker([49.9, -97.2]).addTo(mymap) //Winnipeg
+    //     var marker36 = L.marker([48.4, -89.2]).addTo(mymap) //Thunder Bay
+    //     var marker37 = L.marker([45.4, -75.7]).addTo(mymap) //Ottawa
+    //     var marker38 = L.marker([45.5, -73.5]).addTo(mymap) //Montreal
+    //     var marker39 = L.marker([43.6, -79.4]).addTo(mymap) //Toronto
+    //     var marker40 = L.marker([43.1, -79.1]).addTo(mymap) //Niagra Falls
+    //     var marker41 = L.marker([46.2, -63.1]).addTo(mymap) //Charlettetown
+    //     var marker42 = L.marker([44.6, -63.5]).addTo(mymap) //Halifax
+    //     var marker43 = L.marker([46, -66.6]).addTo(mymap) //Fredricton
+    //     var marker44= L.marker([25.9, -80.2]).addTo(mymap) //Miami
+    //     var marker45 = L.marker([26.6, -81.9]).addTo(mymap) //Fort Myers
+    //     var marker46 = L.marker([33.9, -118]).addTo(mymap) //LA 
+    //     var marker47 = L.marker([33.4, -112]).addTo(mymap) //Pheonix
+    //     var marker48 = L.marker([20.6, -87.1]).addTo(mymap) //Playa del Carmen
+    //     var marker49 = L.marker([24.5, -81.8]).addTo(mymap) //Key West
+    //     var marker50 = L.marker([47.5, -122]).addTo(mymap) //Seattle
 
 
-	marker.bindPopup("<b>London</b><br>Fish n Chips");
-	marker1.bindPopup("<b>Brussels</b><br>Chocolate and beer");
-	marker2.bindPopup("<b>Amsterdam</b><br>Canals and bikes");
-	marker3.bindPopup("<b>Cologne</b><br>Der Dom and Kolsch");
-	marker4.bindPopup("<b>Berlin</b><br>The wall and the Gate");
-	marker5.bindPopup("<b>Dresden</b><br>It's a pretty new old town");
-	marker6.bindPopup("<b>Prague</b><br>Lots of beer in underground bars");
-	// marker7.bindPopup("<b>Munich</b><br>One litre beers!");
-	marker7.bindPopup('<b>Munich</b><br><img width="200px" src="./images/munich2.jpg">');
+	// marker.bindPopup("<b>London</b><br>Fish n Chips");
+	// marker1.bindPopup("<b>Brussels</b><br>Chocolate and beer");
+	// marker2.bindPopup("<b>Amsterdam</b><br>Canals and bikes");
+	// marker3.bindPopup("<b>Cologne</b><br>Der Dom and Kolsch");
+	// marker4.bindPopup("<b>Berlin</b><br>The wall and the Gate");
+	// marker5.bindPopup("<b>Dresden</b><br>It's a pretty new old town");
+	// marker6.bindPopup("<b>Prague</b><br>Lots of beer in underground bars");
+	// // marker7.bindPopup("<b>Munich</b><br>One litre beers!");
+	// marker7.bindPopup('<b>Munich</b><br><img width="200px" src="./images/munich2.jpg">');
 
-	marker8.bindPopup("<b>Vienna</b><br>City of Music");
-	marker9.bindPopup("<b>Venice</b><br>The city on water");
-	marker10.bindPopup("<b>Bern</b><br>I was here in highschool");
-	// marker12.bindPopup("<b>Barcelona</b><br>Sangria on tap and the gecko");
-	marker12.bindPopup('<b>Barcelona</b><br><img width="200px" src="./images/barcelona6.jpg">');
+	// marker8.bindPopup("<b>Vienna</b><br>City of Music");
+	// marker9.bindPopup("<b>Venice</b><br>The city on water");
+	// marker10.bindPopup("<b>Bern</b><br>I was here in highschool");
+	// // marker12.bindPopup("<b>Barcelona</b><br>Sangria on tap and the gecko");
+	// marker12.bindPopup('<b>Barcelona</b><br><img width="200px" src="./images/barcelona6.jpg">');
 
-	marker13.bindPopup("<b>Madrid</b><br>There are four sky scrapers");
-	marker14.bindPopup("<b>Nuremburg</b><br>This isn't the race track spot");
-	marker15.bindPopup("<b>Frankfurt</b><br>Known for Frankfurter (hardly knew her)");
-	marker16.bindPopup("<b>Hamburg</b><br>Expensive opra house and hamburgers");
-	// marker17.bindPopup("<b>Warsaw</b><br>Amazing architecture and tattoos");
-	marker17.bindPopup('<b>Warsaw</b><br><img width="200px" src="./images/warsaw5.jpg">');
+	// marker13.bindPopup("<b>Madrid</b><br>There are four sky scrapers");
+	// marker14.bindPopup("<b>Nuremburg</b><br>This isn't the race track spot");
+	// marker15.bindPopup("<b>Frankfurt</b><br>Known for Frankfurter (hardly knew her)");
+	// marker16.bindPopup("<b>Hamburg</b><br>Expensive opra house and hamburgers");
+	// // marker17.bindPopup("<b>Warsaw</b><br>Amazing architecture and tattoos");
+	// marker17.bindPopup('<b>Warsaw</b><br><img width="200px" src="./images/warsaw5.jpg">');
 
-	marker18.bindPopup("<b>Dusseldorf</b><br>We hate Dusseldorf");
-	marker19.bindPopup("<b>Budepest</b><br>There is Buda and there is Pest");
-	marker20.bindPopup("<b>Miskolc</b><br>Small town mall and Goulash");
-	marker21.bindPopup("<b>Instabul</b><br>If you have a date in constantinople<br>She'll be waiting in Instanbul");
-	marker22.bindPopup("<b>Athens</b><br>The best rooftop patio");
-	marker23.bindPopup("<b>Agistri</b><br>Beach Island");
-	marker24.bindPopup("<b>Stevenage</b><br>Lewis Hamilton is from here");
-	marker25.bindPopup("<b>Bangkok</b><br>Eating some scorpians");
-	marker26.bindPopup("<b>Phuket</b><br>Watching some amazing Muay Thai");
+	// marker18.bindPopup("<b>Dusseldorf</b><br>We hate Dusseldorf");
+	// marker19.bindPopup("<b>Budepest</b><br>There is Buda and there is Pest");
+	// marker20.bindPopup("<b>Miskolc</b><br>Small town mall and Goulash");
+	// marker21.bindPopup("<b>Instabul</b><br>If you have a date in constantinople<br>She'll be waiting in Instanbul");
+	// marker22.bindPopup("<b>Athens</b><br>The best rooftop patio");
+	// marker23.bindPopup("<b>Agistri</b><br>Beach Island");
+	// marker24.bindPopup("<b>Stevenage</b><br>Lewis Hamilton is from here");
+	// marker25.bindPopup("<b>Bangkok</b><br>Eating some scorpians");
+	// marker26.bindPopup("<b>Phuket</b><br>Watching some amazing Muay Thai");
 
 
 	var popup = L.popup();
@@ -208,9 +221,11 @@ var baseMaps = {
 	"Streets": streets
 };
 
+var overlayMaps = {
+    "Cities": cities
+};
 
-
-L.control.layers(baseMaps).addTo(mymap);
+L.control.layers(baseMaps, overlayMaps).addTo(mymap);
 
 
 var baseMaps = {
@@ -218,6 +233,8 @@ var baseMaps = {
 	"Streets": streets,
 	"Satellite": satellite
 };
+
+
 
 
 
