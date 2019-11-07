@@ -12,13 +12,53 @@
 
 </script>  
 <script src="bootstrap.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+	<script src="us-states.js">
+		</script>
+
 
 		 <meta charset="UTF-8">
-		 <meta name="description" content="Personal Blog">
+		 <meta name="description" content="Interactive web mapping service">
 		 <title>Cory High Sea</title>
 		
 		 <link rel="stylesheet" type="text/css" href="bootstrap.css">
 		 <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+		 <style>
+		 #map {
+	width: 600px;
+	height: 400px;
+	border: 3px solid black;
+};
+.info{
+	padding: 6px 8px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+}
+.info h4{
+	margin: 0 0 5px;
+	color: #777;
+}
+
+.legend {
+	line-height: 18px;
+	color: #555;
+}
+
+.legend i {
+		width: 18px;
+		height: 18px;
+		float: left;
+		margin-right: 8px;
+		opacity: 0.7;
+}
+		 
+		 
+		 </style>
 	</head>
 	<body>
 			<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -31,11 +71,11 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 								</button>
-								<a href="index.html" class="navbar-brand">Cory High Sea</a>
+								<a href="index.html" class="navbar-brand">High Sea Co</a>
 							</div>
 							<div class="collapse navbar-collapse" id="bs-nav-demo">
 							<ul class="nav navbar-nav">
-								<li><a  href="page5.html">Services</a></li>
+								<!-- <li><a  href="page5.html">Services</a></li> -->
 								<li><a href="page7.html">Blog Posts</a></li>
 								<li><a href="page4.html">Cities I've Visited</a></li>
 
@@ -51,7 +91,7 @@
 					<div class="container">	
 					<div class="jumbotron">
 				<header>
-					<h1 class="text header">Cory High Sea</h1>
+					<h1 class="text header">High Sea Co</h1>
 					<br/>
 					<h2 class="text header">The core of man's spirit comes from new experiences</h2>
 					<hr>
@@ -62,31 +102,165 @@
 
 
 		
-		<h2 class="text">About Me</h2>
-		<p>Last year I quit my job and bought a one way ticket to Europe. I travelled for a month then found a job as a bartender in Cologne. 
-			I also worked as a walking tour guide which allowed me to meet lots of people. While I was living there I was able to travel
-			to a few other countries as well. I recently moved back to Canada to work as a field supervisor for a six month contract.
-			I will be going back to Europe in January on a way ticket again and going to travel as much as I can. 
-		</p>
-		<p>I have been teaching myself software development through different resources. I have built this site myself with html, css, and javascript. 
-			
-			 
-		</p>
-		<!-- <p class="text"> 	I grew up in Calgary and took Mechanical Engineering 
-                in Kelowna, British Columbia. During school and after I graduated I worked a few 
-                different jobs in different industries. I worked in sales for Hydraulics and industrial
-                components for 1.5 years. Currently the work I am doing is Civil Engineering in a 
-				field role. I like to practice software development in my spare time. I made this site to showcase the software development skills 
-			I have aquired. Along with writing about my travels. adding for a test </p> -->
+		<h2 class="text">Interactive web mapping service</h2>
+	<p>
+		If you are looking for an interactive map for your page you have come to the right place. I am able to develop an interactive
+		web map for your page. You can see the examples below. I have also featured a cities I have visited page with different cities I have been to.
+		There are many different features that can be done. With different areas marked out and different popups with your content. Another cool feature 
+		is that the pins are customizable to your logo or whatever you might want to use.
+
+	</p>
+		
 	<hr/>
-	<div>
+	<!-- <div>
 	<img width="400px" src="images/firstdayontrip.jpg"/>
-</div>
-<br>
-<br>
-<br>
+	<img style="float: right;" width="480px" src="images/High-Sea-Co-Logo.PNG"/>
+
+</div> -->
+
+
+			
+		
+		
+			
+			<div id="mapid" style="width: 600px; height: 400px; border: 3px solid black">
+				
+				
+				</div>
+				<br>
+
+				<div id="map">
+
+				</div>
+			<!-- <img width="400px" src="images/firstdayontrip.jpg"> -->
+
+
+
 	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 	<script type="text/javascript" src="javascript.js"></script>
+	<script>
+		var mymap = L.map('mapid').setView([51.505, 6], 5);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+	maxZoom: 18,
+	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+		'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+		'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	id: 'mapbox.streets'
+}).addTo(mymap);
+
+L.marker([50.941326, 6.957994]).addTo(mymap).bindPopup('Cologne');
+	
+// States map
+	
+var map = L.map('map').setView([37.8, -96], 3);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', 		maxZoom: 18,
+		id: 'mapbox.light', 		// id: 'mapbox.satellite',
+	   accessToken: 'pk.eyJ1IjoiZHRjMiIsImEiOiJjajM0bGhtdWMwMXMyMndvOTNhMTV5bGlwIn0.P982OmG7OY8ETeL971l1Ww'
+	}).addTo(map);
+
+
+L.geoJSON(statesData).addTo(map);
+function getColor(d) {
+   return d > 1000 ? '#800026' :
+		  d > 500  ? '#BD0026' :
+		  d > 200  ? '#E31A1C' :
+		  d > 100  ? '#FC4E2A' :
+		  d > 50   ? '#FD8D3C' :
+		  d > 20   ? '#FEB24C' :
+		  d > 10   ? '#FED976' :
+					 '#FFEDA0';
+}
+
+function style(feature) {
+   return {
+	   fillColor: getColor(feature.properties.density),
+	   weight: 2,
+	   opacity: 1,
+	   color: 'white',
+	   dashArray: '3',
+	   fillOpacity: 0.7
+   };
+}
+L.geoJson(statesData, {style: style}).addTo(map);
+
+function highlightFeature(e) {
+   var layer = e.target;
+   info.update(layer.feature.properties);
+
+   layer.setStyle({
+	   weight: 5,
+	   color: '#666',
+	   dashArray: '',
+	   fillOpacity: 0.7
+   });
+   
+   if(!L.Browser.ie && !L.Browser.opera && !L.Browser.edge){
+	   layer.bringToFront();
+   }
+}
+
+function resetHighlight(e) {
+   geojson.resetStyle(e.target);
+   info.update();
+}
+
+
+function zoomToFeature(e) {
+   map.fitBounds(e.target.getBounds());
+}
+
+function onEachFeature(feature, layer) {
+   layer.on({
+	   mouseover: highlightFeature,
+	   mouseout: resetHighlight,
+	   click: zoomToFeature
+   });
+}
+
+geojson = L.geoJson(statesData, {
+   style: style,
+   onEachFeature: onEachFeature
+}).addTo(map);
+
+
+var info = L.control();
+
+info.onAdd = function (map) {
+   this._div = L.DomUtil.create('div', 'info');
+   this.update();
+   return this._div;
+};
+
+info.update = function (props) {
+   this._div.innerHTML = '<h4>US Population Density</h4>' + (props ?
+   '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
+   : 'Hover over a state');
+}
+
+info.addTo(map);
+
+
+
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+   var div = L.DomUtil.create('div', 'info legend'),
+	   grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+	   labels = [];
+   for (var i = 0; i < grades.length; i++){
+	   div.innerHTML += 
+			   '<i style="background:' + getColor(grades[i] +1) + '"></i> ' +
+			   grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+   }
+   return div;
+};
+
+legend.addTo(map);
+	</script>
 </body>
 
 
