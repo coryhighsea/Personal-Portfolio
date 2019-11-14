@@ -150,7 +150,17 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 	id: 'mapbox.streets'
 }).addTo(mymap);
 
-L.marker([50.941326, 6.957994]).addTo(mymap).bindPopup('Cologne');
+// L.marker([50.941326, 6.957994]).addTo(mymap).bindPopup('Cologne');
+var domIcon = L.icon({
+    iconUrl: 'dom.svg',
+
+    iconSize:     [60, 80], // size of the icon
+    iconAnchor:   [30, 40], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -35] // point from which the popup should open relative to the iconAnchor
+});
+
+L.marker([50.941326, 6.957994], {icon: domIcon}).addTo(mymap).bindPopup('<img width="200px" src="/images/dom.jpg">');
+
 var europeancountriesGeoJSON = false;
 fetch('/europeancountries.json', {
     method: 'GET'
@@ -179,16 +189,7 @@ fetch('/europeancountries.json', {
     }).addTo(mymap);
 })
 .catch(error => console.log(error.message));
-// function zoomToFeature(e) {
-//    mymap.fitBounds(e.target.getBounds());
-// }
 
-// function onEachFeature(feature, layer) {
-//    layer.on({
-// 	   click: zoomToFeature
-//    });
-// }
-	
 // States map
 	
 var map = L.map('map').setView([37.8, -96], 3);
