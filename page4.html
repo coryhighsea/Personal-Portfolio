@@ -30,6 +30,8 @@
 		</style>
 		<script src="cities.js">
 			</script>
+				<script src="leaflet-providers.js"></script>
+
 	</head>
 	<body>
 			<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -92,13 +94,15 @@ var mapboxUrl =  'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_to
 var grayscale = L.tileLayer(mapboxUrl, {id: 'mapbox.light', attribution: mapboxAttribution}),
 	satellite = L.tileLayer(mapboxUrl, {id: 'mapbox.satellite', attribution: mapboxAttribution}),
 
-	streets   = L.tileLayer(mapboxUrl, {id: 'mapbox.streets', attribution: mapboxAttribution});
+	streets   = L.tileLayer(mapboxUrl, {id: 'mapbox.streets', attribution: mapboxAttribution}),
+	DeLorme = L.tileLayer.provider('Esri.DeLorme');
+
 	
 
 var mymap = L.map('mapid', {
 	center: [50.923, 6.94],
 	zoom: 5,
-	 layers: [streets, cities]
+	 layers: [streets, cities, DeLorme]
 });
 
  
@@ -120,7 +124,8 @@ mymap.on('click', onMapClick);
 var baseMaps = {
 	"Grayscale": grayscale,
 	"Satellite": satellite,
-	"Streets": streets
+	"Streets": streets,
+	"DeLorme": DeLorme
 };
 
 var overlayMaps = {
