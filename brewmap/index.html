@@ -86,12 +86,12 @@ html, body, #map {
 <body>
 
 
-	<div id="overlay">
+	  <div id="overlay">
 		<h2>Brew Map</h2>
-		<!-- <div class="story" data-point="50.984505, -113.955216">First link</div> -->
+		 <div class="story" data-point="50.984505, -113.955216">First link</div> 
 
-        <input id="myInput" type="text" placeholder="search" onkeyup="myFunction()">
-        <!-- <input type="submit"> -->
+         <input id="myInput" type="text" placeholder="search" onkeyup="myFunction()">
+         <input type="submit">
 		<ul id="myUL">
 	<li><a href="#" class="story" data-point="50.984505, -113.955216">Big Rock Brewery</a></li>
 	<li><a href="#" class="story" data-point="51.021267, -114.053299">Cabin Brewery</a></li>
@@ -104,7 +104,7 @@ html, body, #map {
 	<li><a href="#">Christina</a></li>
 	<li><a href="#">Cindy</a></li>
 	</ul>
-	</div>
+	</div> 
 <div id="map"></div>
 <script>
 
@@ -201,16 +201,16 @@ var breweries = {
 
 
 // Click to get coordinates
-var popup = L.popup();
+// var popup = L.popup();
 
-function onMapClick(e) {
-	popup
-		.setLatLng(e.latlng)
-		.setContent("You clicked the map at " + e.latlng.toString())
-		.openOn(map);
-}
+// function onMapClick(e) {
+// 	popup
+// 		.setLatLng(e.latlng)
+// 		.setContent("You clicked the map at " + e.latlng.toString())
+// 		.openOn(map);
+// }
 
-map.on('click', onMapClick);
+// map.on('click', onMapClick);
 
 
 // Search bar
