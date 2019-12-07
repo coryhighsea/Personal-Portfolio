@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 
 <style>
@@ -31,7 +31,52 @@ html, body, #map {
 	font-weight: bold;
 	font-size: 18px;
 }
+#overlay{
+        position: absolute;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 10px;
+        margin: 10px;
+        right: 0;
+        border-radius: 10px;
+        box-shadow: 1px 1px 1px grey;
+        min-height: 200px;
+        /* bottom: 50%; */
+        width: 250px;
+    }
+	/* #myInput{
+		margin:-5px;
+	} */
+	#myInput {
+  background-image: url('./images/search.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 180px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+	#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
 
 </style>
 
@@ -41,7 +86,25 @@ html, body, #map {
 <body>
 
 
+	<div id="overlay">
+		<h2>Brew Map</h2>
+		<!-- <div class="story" data-point="50.984505, -113.955216">First link</div> -->
 
+        <input id="myInput" type="text" placeholder="search" onkeyup="myFunction()">
+        <!-- <input type="submit"> -->
+		<ul id="myUL">
+	<li><a href="#" class="story" data-point="50.984505, -113.955216">Big Rock Brewery</a></li>
+	<li><a href="#" class="story" data-point="51.021267, -114.053299">Cabin Brewery</a></li>
+
+
+	<li><a href="#">Billy</a></li>
+	<li><a href="#">Bob</a></li>
+
+	<li><a href="#">Calvin</a></li>
+	<li><a href="#">Christina</a></li>
+	<li><a href="#">Cindy</a></li>
+	</ul>
+	</div>
 <div id="map"></div>
 <script>
 
@@ -104,24 +167,38 @@ L.marker([51.092129, -114.031616], {icon: beerIcon}).addTo(map).bindPopup('<p cl
 L.marker([51.08944, -114.031498], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Zero Issue Brewing</p><img width="250px" src="images/zero.jpg">');
 L.marker([51.083961, -114.058696], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Citizen Brewing Company</p><img width="250px" src="images/citizen.jpg">');
 L.marker([51.037636, -114.067301], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Millstreet Brewpub</p><img width="250px" src="images/millstreet.jpg">');
-L.marker([51.021267, -114.053299], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Cabin Brewing Company</p><img width="250px" src="images/cabin.jpg">');
 L.marker([51.022988, -114.051626], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Banded Peak Brewing</p><img width="250px" src="images/bandedpeak.jpg">');
 L.marker([51.018911, -114.041133], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Legend 7 Brewing</p><img width="250px" src="images/legend7.jpg">');
 L.marker([51.014841, -114.062215], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Annex Ale Project</p><img width="250px" src="images/annex.jpg">');
 L.marker([51.009482, -114.034921], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Village Brewery</p><img width="250px" src="images/village.jpg">');
 L.marker([50.992933, -114.065466], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">New Level Brewing</p><img width="250px" src="images/newlevel.jpg">');
 L.marker([51.04308, -114.079928], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Inner City Brewing</p><img width="250px" src="images/innercity.jpg">');
-L.marker([50.984505, -113.955216], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Big Rock Brewery</p><img width="250px" src="images/bigrock.jpg">');
+L.marker([51.044486, -114.096056], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Two House Brewing Company</p><img width="250px" src="images/twohouse.jpg">');
+L.marker([51.037985, -114.078596], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Trolly 5 Brewpub</p><img width="250px" src="images/trolly5.jpg">');
+L.marker([51.145907, -114.014422], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Railyard Brewing</p><img width="250px" src="images/railyard.jpg">');
+L.marker([50.996981, -113.972597], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Good Mood Brewery</p><img width="250px" src="images/goodmood.jpg">');
+L.marker([51.02525, -113.840499], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Township 24</p><img width="250px" src="images/township.jpg">');
 
-var firstPopup = L.marker([50.8952, -114.08]).addTo(map).bindPopup('The best popup');
-// popup when zoom
-map.on('zoomend', function(){
-  if(map.getZoom() > 6){
-	  firstPopup.showPopup();
+var breweries = {
+	 bigRock: L.marker([50.984505, -113.955216], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Big Rock Brewery</p><img width="250px" src="images/bigrock.jpg">'),
+	 cabin:  L.marker([51.021267, -114.053299], {icon: beerIcon}).addTo(map).bindPopup('<p class="title">Cabin Brewing Company</p><img width="250px" src="images/cabin.jpg">'),
+
+}
+
+// var marker = new L.marker([50.984505, -113.955216], {opacity: 1});
+// marker.bindTooltip('Big Rock Brewery', {permanent: true, className: "my-label", offset: [-10, -20] });
+// marker.addTo(map).bindPopup('<p class="title">Big Rock Brewery</p><img width="250px" src="images/bigrock.jpg">')
+
+
+// var firstPopup = L.marker([50.8952, -114.08]).addTo(map).bindPopup('The best popup');
+// // popup when zoom
+// map.on('zoomend', function(){
+//   if(map.getZoom() > 6){
+// 	  firstPopup.showPopup('The best test popup');
 	 
-  } 
-});
-//test git
+//   } 
+// });
+
 
 // Click to get coordinates
 var popup = L.popup();
@@ -136,6 +213,41 @@ function onMapClick(e) {
 map.on('click', onMapClick);
 
 
+// Search bar
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+// click to zoom
+
+$('.story').on('click', function(){
+    // parse lat and lng from the divs data attribute
+    var latlng = $(this).data().point.split(',');
+    var lat = latlng[0];
+    var lng = latlng[1];
+	var zoom = 14;
+	// var popup = $(this).openPopup();
+
+    // set the view
+	map.setView([lat, lng], zoom);
+
+    
+	breweries.bigRock.openPopup()
+	// cabin.openPopup();
+  })
 </script>
 
 
