@@ -42,7 +42,7 @@ html, body, #map {
         box-shadow: 1px 1px 1px grey;
         min-height: 200px;
         /* bottom: 50%; */
-        width: 250px;
+        width: 15%;
     }
 	/* #myInput{
 		margin:-5px;
@@ -51,9 +51,9 @@ html, body, #map {
   background-image: url('./images/search.png');
   background-position: 10px 12px;
   background-repeat: no-repeat;
-  width: 180px;
+  width: 45%;
   font-size: 16px;
-  padding: 12px 20px 12px 40px;
+  padding: 12px 20px 12px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
@@ -88,21 +88,21 @@ html, body, #map {
 
 	  <div id="overlay">
 		<h2>Brew Map</h2>
-		 <div class="story" data-point="50.984505, -113.955216">First link</div> 
+		 
 
          <input id="myInput" type="text" placeholder="search" onkeyup="myFunction()">
-         <input type="submit">
+        
 		<ul id="myUL">
-	<li><a href="#" class="story" data-point="50.984505, -113.955216">Big Rock Brewery</a></li>
-	<li><a href="#" class="story" data-point="51.021267, -114.053299">Cabin Brewery</a></li>
+	<li><a href="#" class="story" data-point="50.984505, -113.955216">Big Rock</a></li>
+	<li><a href="#" class="story" data-point="51.021267, -114.053299">Cabin</a></li>
 
 
-	<li><a href="#">Billy</a></li>
+	<!-- <li><a href="#">Billy</a></li>
 	<li><a href="#">Bob</a></li>
 
 	<li><a href="#">Calvin</a></li>
 	<li><a href="#">Christina</a></li>
-	<li><a href="#">Cindy</a></li>
+	<li><a href="#">Cindy</a></li> -->
 	</ul>
 	</div> 
 <div id="map"></div>
@@ -245,7 +245,7 @@ $('.story').on('click', function(){
 	map.setView([lat, lng], zoom);
 
     
-	breweries.bigRock.openPopup()
+	breweries.this.openPopup()
 	// cabin.openPopup();
   })
 </script>
