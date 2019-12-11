@@ -8,7 +8,36 @@
 		<link rel="stylesheet" href="stylesheet.css">
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<style>
 
+img {
+	filter: grayscale(100%);
+}
+
+img:hover {
+	filter: grayscale(0%);
+	transition: 0.5s;
+
+}
+.title{
+	background-color: rgb(34, 23, 131);
+	margin: 10px;
+	padding: 10px;
+	border-radius: 10px;
+	width: 50%;
+	margin: auto;
+	color: white;
+}
+.title:hover {
+	transform: scale(1.2);
+	transition-property: transform;
+	transition-duration: .5s;
+
+}
+
+
+
+</style>
 		 	
 	</head>
 	
@@ -42,7 +71,7 @@
 					</div>
 				</nav>
 
-				<script src="jQuery.js"></script>
+				<!-- <script src="jQuery.js"></script> -->
 			<div class="container">	
 			<!-- <div class="jumbotron">
 		<header>
@@ -54,11 +83,11 @@
 </div> -->
 	
 		
-		<h2 class="text">Photo Gallery</h2>
+		<h2 class="text title">Photo Gallery</h2>
 		<p class="text">These are some of the photos I have taken on my travels</p>
 			<hr/>
 
-			<h3 class="text">Warsaw, Poland</h3>
+			<h3 class="text title">Warsaw, Poland</h3>
 			<h5 class="text">May 2019</h5>
 
 			<br>
@@ -94,10 +123,11 @@
 												<img src="images/warsaw6.jpg">
 												</div>
 											</div>
-	
-				<hr>
-				<h3 class="text">Munich, Germany</h3>
+	</div>
+				<hr/>
+				<h3 class="text title">Munich, Germany</h3>
 				<h5 class="text">May 2019</h5>
+
 			<br>
 				<div class="row">
 
@@ -117,8 +147,9 @@
 										</div>
 						
 					</div>
+					</div>
 					<hr>
-					<h3 class="text">Barcelona, Spain</h3>
+					<h3 class="text title">Barcelona, Spain</h3>
 					<h5 class="text">March 2019</h5>
 					<br>
 
@@ -161,7 +192,7 @@
 						
 					</div>
 <hr>
-					<h3 class="text">Prague, Czech Republic</h3>
+					<h3 class="text title">Prague, Czech Republic</h3>
 					<h5 class="text">September 2018</h5>
 					<br>
 						<div class="row">

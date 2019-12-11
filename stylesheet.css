@@ -53,4 +53,9 @@ p {
 	  background-color: rgb(45, 120, 163);
 	  padding: 20px;
 	  font-weight: bold;
+	  border-radius: 20px;
   }
+
+  a:hover {
+	transform: scale(1.2);
+}
