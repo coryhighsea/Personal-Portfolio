@@ -59,6 +59,17 @@
 		margin-right: 8px;
 		opacity: 0.7;
 }
+#image{
+	width: 400px;
+	border: 4px solid black;
+	/* margin: 0 auto; */
+}
+
+/* #image:hover {
+	transform: translate(400px) rotate(360deg);
+	transition: transform 2s;
+	/* transition-delay: 2s; */
+} */
 	 
 		 
 		 </style>
@@ -76,7 +87,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 								</button>
-								<a href="index.html" class="navbar-brand">High Sea Co</a>
+								<a href="index.html" class="navbar-brand">Cory High Sea</a>
 							</div>
 							<div class="collapse navbar-collapse" id="bs-nav-demo">
 							<ul class="nav navbar-nav">
@@ -95,212 +106,57 @@
 					<div class="container">	
 					<div class="jumbotron">
 				<header>
-					<h1 class="text header">High Sea Co</h1>
+					<h1 class="text header">Cory High Sea</h1>
 					<br/>
 					<h2 class="text header">The core of man's spirit comes from new experiences</h2>
 					<hr>
 				</header>
 		</div>
-		<!-- <script src="jQuery.js"></script> -->
 			
 
 
 
 		
-		<h2 class="text">Interactive web mapping service</h2>
-	<p>
-		If you are looking for an interactive map for your page you have come to the right place. I am able to develop an interactive
-		web map for your page. You can see the examples below. I have also featured a cities I have visited page with different cities I have been to.
-		There are many different features that can be done. With different areas marked out and different popups with your content. Another cool feature 
-		is that the pins are customizable to your logo or whatever you might want to use.
-
+	
+	<h2 class="text">Welcome to my Site</h2>
+	<p class="text">I have created this website to highlight my travels while showcasing the web development skills I have aquired. 
+		I lived in Germany for 8 months and visited a few other countries while I lived there. I have some blog posts and photos from these travels.
+		I also have blog posts on healthy living or other parts of my life. I plan on to continue to travel in the future. Part of the focus of this site
+		is to practice the web development skills I am learning. I am constantly updating the site with new features as I learn them. I find it a good supplement to
+		my learning to have a real project. 
 	</p>
-		
-	<hr/>
-	<!-- <div>
-	<img width="400px" src="images/firstdayontrip.jpg"/>
-	<img style="float: right;" width="480px" src="images/High-Sea-Co-Logo.PNG"/>
+	<hr>
+	<p class="text">
+		On the blog post page you can find a few small blogs as I mentioned earlier. There are pictures in this section as well. The next page is a Cities I've Visited page
+		Where I used leaflet.js library to create an interactive map where I put pins of what cities I have visited. Most of them are in Europe. On the next
+		page I have created a little photo Gallery with some cool CSS features I have been working on. The pictures aren't half bad either. I am thinking of 
+		investing in a decent camera and to create some quality photos. But for now the presentation is where the quality is coming from. Finally there is a contact 
+		page where you can find links to my social media and my email.
+	</p>
+	<hr>
+	<p class="text">
+		If a site like this or any of the features on this site are of interest to you, please let me know. I would be happy to help in creating a site or an app for you.
+		I am experienting in data visualization libraries that can create interactive graphs and charts to display data. I believe these features will go well along with
+		leaflet mapping. I can even help with making a WordPress page as well. That route is good for the end user to be able to update their site.
+	</p>
+	<hr>
+	<h4 class="text">Here is a photo of me the day I left to Europe</h4>
+		<div >
+	<img id="image" src="images/firstdayontrip.jpg"/>
 
-</div> -->
-
-
-			
-		
-		
-			
-			<div id="mapid" style="width: 600px; height: 400px; border: 3px solid black">
-				
-				
-				</div>
-				<br>
-
-				<div id="map">
-
-				</div>
-			<!-- <img width="400px" src="images/firstdayontrip.jpg"> -->
+		</div>
+		<!-- <div id="mapid" style="width: 600px; height: 400px; border: 3px solid black"> -->
+		</div>
+		<br>
+		<!-- <div id="map"> -->
+		</div>
+					
 
 
 
 	<!-- <script type="text/javascript" src="javascript.js"></script> -->
-	<script>
-		var mymap = L.map('mapid').setView([51.505, 6], 5);
-
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-	maxZoom: 18,
-	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-		'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-		'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-	id: 'mapbox.streets'
-}).addTo(mymap);
-
-// L.marker([50.941326, 6.957994]).addTo(mymap).bindPopup('Cologne');
-var domIcon = L.icon({
-    iconUrl: 'dom.svg',
-
-    iconSize:     [60, 80], // size of the icon
-    iconAnchor:   [30, 40], // point of the icon which will correspond to marker's location
-    popupAnchor:  [0, -35] // point from which the popup should open relative to the iconAnchor
-});
-
-L.marker([50.941326, 6.957994], {icon: domIcon}).addTo(mymap).bindPopup('<img width="200px" src="/images/dom.jpg">');
-
-var europeancountriesGeoJSON = false;
-fetch('/europeancountries.json', {
-    method: 'GET'
-})
-.then(response => response.json())
-.then(json => {
-    var geojson = L.geoJSON(json, {
-        style: function (feature){
-            return {
-                fillOpacity: 0,
-                weight: 0.3,
-            }
-        },
-        onEachFeature: function(feature, layer) {
-            layer.on('mouseover', function(){
-                layer.setStyle({fillOpacity: 0.3})
-            })
-            layer.on('mouseout', function(){
-                layer.setStyle({fillOpacity: 0})
-            })
-			layer.on('click', function(e){
-				mymap.fitBounds(e.target.getBounds())
-			})
-        }
-    }).addTo(mymap);
-})
-.catch(error => console.log(error.message));
-
-// States map
-	
-var map = L.map('map').setView([37.8, -96], 3);
-
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', 		maxZoom: 18,
-		id: 'mapbox.light', 		// id: 'mapbox.satellite',
-	   accessToken: 'pk.eyJ1IjoiZHRjMiIsImEiOiJjajM0bGhtdWMwMXMyMndvOTNhMTV5bGlwIn0.P982OmG7OY8ETeL971l1Ww'
-	}).addTo(map);
-
-
-L.geoJSON(statesData).addTo(map);
-function getColor(d) {
-   return d > 1000 ? 'green' :
-		  d > 500  ? 'orange' :
-		  d > 200  ? 'red' :
-		  d > 100  ? 'blue' :
-		  d > 50   ? 'lightgreen' :
-		  d > 20   ? 'lightblue' :
-		  d > 10   ? 'yellow' :
-					 'purple';
-}
-
-function style(feature) {
-   return {
-	   fillColor: getColor(feature.properties.density),
-	   weight: 2,
-	   opacity: 1,
-	   color: 'white',
-	   dashArray: '3',
-	   fillOpacity: 0.7
-   };
-}
-L.geoJson(statesData, {style: style}).addTo(map);
-
-function highlightFeature(e) {
-   var layer = e.target;
-   info.update(layer.feature.properties);
-
-   layer.setStyle({
-	   weight: 5,
-	   color: '#666',
-	   dashArray: '',
-	   fillOpacity: 0.7
-   });
-   
-   if(!L.Browser.ie && !L.Browser.opera && !L.Browser.edge){
-	   layer.bringToFront();
-   }
-}
-
-function resetHighlight(e) {
-   geojson.resetStyle(e.target);
-   info.update();
-}
-
-
-function zoomToFeature(e) {
-   map.fitBounds(e.target.getBounds());
-}
-
-function onEachFeature(feature, layer) {
-   layer.on({
-	   mouseover: highlightFeature,
-	   mouseout: resetHighlight,
-	   click: zoomToFeature
-   });
-}
-
-geojson = L.geoJson(statesData, {
-   style: style,
-   onEachFeature: onEachFeature
-}).addTo(map);
-
-
-var info = L.control();
-
-info.onAdd = function (map) {
-   this._div = L.DomUtil.create('div', 'info');
-   this.update();
-   return this._div;
-};
-
-info.update = function (props) {
-   this._div.innerHTML = '<h4>US States</h4>' + (props ?
-   '<b>' + props.name + '</b><br />' 
-   : 'Hover over a state');
-}
-
-info.addTo(map);
-
-
-
-var legend = L.control({position: 'bottomright'});
-
-legend.onAdd = function (map) {
-
-   var div = L.DomUtil.create('div', 'info legend'),
-	   grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-	   labels = [];
-   for (var i = 0; i < grades.length; i++){
-	   div.innerHTML += 
-			   '<i style="background:' + getColor(grades[i] +1) + '"></i> ' +
-			   grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-   }
-   return div;
-};
-
-
+	<script src="intoMap.js">
+		
 	</script>
 </body>
 
