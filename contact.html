@@ -6,10 +6,28 @@
 		 <title>Cory High Sea</title>
 		 <link rel="stylesheet" href="bootstrap.css">
 		 <link rel="stylesheet" href="stylesheet.css">
-		 <script src="bootstroap.js">
+		 <script src="bootstrap.js">
 		 </script>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-		 	
+			 
+		<style>
+			#email{
+				padding:15px;
+				background-color:rgb(35, 71, 150);
+				border-radius: 10px;
+				color: white;
+				text-decoration: none;
+			}
+			#email:hover {
+				background-color:rgb(28, 56, 116);
+				color: white;
+				text-decoration: none;
+			}
+			#name{
+				text-decoration: underline;
+			}
+			
+			</style>
 	</head>
 	
 	<body>
@@ -43,30 +61,28 @@
 		
 
 		<h1 class="text">Contact Page</h1>
-		<h3 class="text">Cory Hisey</h3>
+		<h1 id="name" class="text">Cory Hisey</h1>
 
-		<h3 class="text">Email: <a href="mailto: coryh@coryhighsea.com">coryh@coryhighsea.com</a></h3>
+		<h3 class="text"><a id="email" href="mailto: coryh@coryhighsea.com">coryh@coryhighsea.com</a></h3>
+	
 		
-<script>
 
-window.open(
-  'https://www.facebook.com/cory.hisey.58',
-  '_blank' // <- This is what makes it open in a new window.
-);
-</script>
 <h3 class="text">
 		
-	<!-- <a href="https://www.facebook.com/cory.hisey.58" target="_blank">Facebook</a><br>
+	<!-- <a id="facebook" href="https://www.facebook.com/cory.hisey.58" target="_blank">Facebook</a><br>
 	
-	<a href="https://www.instagram.com/coryhighsea/" target="_blank">Instagram</a><br>
-		<a href="https://github.com/coryhighsea" target="_blank">GitHub</a><br>
-		<a href="https://www.linkedin.com/in/cory-hisey-730a8a59/" target="_blank">Linkedin</a> -->
-		<form target="_blank">
+	 <a id="instagram" href="https://www.instagram.com/coryhighsea/" target="_blank">Instagram</a><br> 
+		<a id="github" href="https://github.com/coryhighsea" target="_blank">GitHub</a><br>
+		<a id="linkedin" href="https://www.linkedin.com/in/cory-hisey-730a8a59/" target="_blank">Linkedin</a> 
+		
+		 -->
+		
 		<input type="button" class="btn btn-lg btn-primary" onclick="location.href='https://www.facebook.com/cory.hisey.58';" value="Facebook" /><br><br>
+		
 		<input type="button" class="btn btn-lg btn-danger" onclick="location.href='https://www.instagram.com/coryhighsea/';" value="Instagram" /><br><br>
 		<input type="button" class="btn btn-lg btn-success" onclick="location.href='https://github.com/coryhighsea';" value="GitHub" /><br><br>
 		<input type="button" class="btn btn-lg btn-primary" onclick="location.href='https://www.linkedin.com/in/cory-hisey-730a8a59/';" value="Linkedin" />
-		</form>
+		
 </h3>
 	
 
