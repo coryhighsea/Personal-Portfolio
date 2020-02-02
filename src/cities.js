@@ -31,11 +31,13 @@ var london = L.marker([51.5, -0.09]).bindPopup('London'),
     edmonton = L.marker([53.5, -113.5]).bindPopup('Edmonton'),
     vancouver = L.marker([49.2, -123]).bindPopup('Vancouver'),
     kelowna = L.marker([49.9, -119.5]).bindPopup('Kelowna');
+    marrakech = L.marker([31.631661, -7.988271]).bindPopup('<b>Marrakech</b><br><img width="200px" src="images/marrakech.jpg">'),
+    paris = L.marker([48.858797, 2.356567]).bindPopup('Paris');
 
 
 
 
     var cities = L.layerGroup([london, brussels, berlin, cologne, amsterdam, pinchercreek, dresden, prague, munich, vienna, venice, bern,
          verona, barcelona, madrid, nuremburg, frankfurt, hamburg, warsaw, dusseldorf, budapest, miskolc, istanbul, athens, agistri, stevenage, 
-        bangkok, phuket, calgary, reddeer, edmonton, vancouver, kelowna]);
+        bangkok, phuket, calgary, reddeer, edmonton, vancouver, kelowna, marrakech, paris]);
     
