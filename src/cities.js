@@ -32,12 +32,34 @@ var london = L.marker([51.5, -0.09]).bindPopup('London'),
     vancouver = L.marker([49.2, -123]).bindPopup('Vancouver'),
     kelowna = L.marker([49.9, -119.5]).bindPopup('Kelowna');
     marrakech = L.marker([31.631661, -7.988271]).bindPopup('<b>Marrakech</b><br><img width="200px" src="images/marrakech.jpg">'),
-    paris = L.marker([48.858797, 2.356567]).bindPopup('Paris');
+    paris = L.marker([48.858797, 2.356567]).bindPopup('Paris'),
+    la = L.marker([34.010944, -118.226074]).bindPopup('Los Angeles'),
+    seattle = L.marker([47.573838, -122.301453]).bindPopup('Seattle'),
+    cancun = L.marker([21.167619, -86.839474]).bindPopup('Cancun'),
+    playa = L.marker([20.626393, -87.076057]).bindPopup('Playa del Carmen'),
+    miami = L.marker([25.77372, -80.203079]).bindPopup('Miami'),
+    tampa = L.marker([27.945098, -82.43042]).bindPopup('Tampa'),
+    houston = L.marker([29.746948, -95.347595]).bindPopup('Houston'),
+    phoenix = L.marker([33.44644, -112.065765]).bindPopup('Phoenix'),
+    toronto = L.marker([43.662465, -79.394348]).bindPopup('Toronto'),
+    ottawa = L.marker([45.373425, -75.682617]).bindPopup('Ottawa'),
+    montreal = L.marker([45.518102, -73.557584]).bindPopup('Montreal'),
+    quebec = L.marker([46.660149, -71.2771]).bindPopup('Quebec'),
+    halifax = L.marker([44.650613, -63.57843]).bindPopup('Halifax'),
+    charlottetown = L.marker([46.239927, -63.132248]).bindPopup('Charlottetown'),
+    orlando = L.marker([28.554882, -81.373123]).bindPopup('Orlando'),
+    regina = L.marker([50.44135, -104.585449]).bindPopup('Regina'),
+    winnipeg = L.marker([49.873733, -97.1521]).bindPopup('Winnipeg'),
+    saskatoon = L.marker([52.140902, -106.670105]).bindPopup('Saskatoon'),
+    thunderBay = L.marker([48.403139, -89.245926]).bindPopup('Thunder Bay'),
+    lasVegas = L.marker([36.165237, -115.146263]).bindPopup('Las Vegas'),
+    keyWest = L.marker([24.555204, -81.78039]).bindPopup('Key West');
 
 
 
 
     var cities = L.layerGroup([london, brussels, berlin, cologne, amsterdam, pinchercreek, dresden, prague, munich, vienna, venice, bern,
          verona, barcelona, madrid, nuremburg, frankfurt, hamburg, warsaw, dusseldorf, budapest, miskolc, istanbul, athens, agistri, stevenage, 
-        bangkok, phuket, calgary, reddeer, edmonton, vancouver, kelowna, marrakech, paris]);
+        bangkok, phuket, calgary, reddeer, edmonton, vancouver, kelowna, marrakech, paris, la, seattle, cancun, playa, miami, tampa, houston, phoenix, toronto,
+    ottawa, montreal, quebec, halifax, charlottetown, orlando, regina, winnipeg, saskatoon, thunderBay, lasVegas, keyWest]);
     
