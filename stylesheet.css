@@ -59,3 +59,8 @@ p {
   a:hover {
 	transform: scale(1.2);
 }
+.post {
+	text-align: left;
+	font-family: Georgia;
+
+}
