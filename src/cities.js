@@ -7,7 +7,7 @@ var london = L.marker([51.5, -0.09]).bindPopup('<strong>London<strong><br><img w
     dresden = L.marker([51.06, 13.74]).bindPopup('Dresden'),
     prague = L.marker([50.08, 14.4]).bindPopup('<b>Prague</b><br><img width="200px" src="images/prague1.jpg">'),
     munich = L.marker([48.19, 11.56]).bindPopup('<b>Munich</b><br><img width="200px" src="images/munich1.jpg">'),
-    vienna = L.marker([48.19, 16.4]).bindPopup('Vienna'),
+    innsbruck = L.marker([47.257, 11.4]).bindPopup('Innsbruck'),
     venice = L.marker([45.44, 12.33]).bindPopup('Venice'),
     bern = L.marker([46.95, 7.44]).bindPopup('Bern'),
     verona = L.marker([45.43, 10.99]).bindPopup('verona'),
@@ -58,7 +58,7 @@ var london = L.marker([51.5, -0.09]).bindPopup('<strong>London<strong><br><img w
 
 
 
-var cities = L.layerGroup([london, brussels, berlin, cologne, amsterdam, pinchercreek, dresden, prague, munich, vienna, venice, bern,
+var cities = L.layerGroup([london, brussels, berlin, cologne, amsterdam, pinchercreek, dresden, prague, munich, innsbruck, venice, bern,
     verona, barcelona, madrid, nuremburg, frankfurt, hamburg, warsaw, dusseldorf, budapest, miskolc, istanbul, athens, agistri, stevenage,
     bangkok, phuket, calgary, reddeer, edmonton, vancouver, kelowna, marrakech, paris, la, seattle, cancun, playa, miami, tampa, houston, phoenix, toronto,
     ottawa, montreal, quebec, halifax, charlottetown, orlando, regina, winnipeg, saskatoon, thunderBay, lasVegas, keyWest
