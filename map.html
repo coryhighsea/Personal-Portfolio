@@ -106,9 +106,17 @@
             DeLorme = L.tileLayer.provider('Esri.DeLorme');
 
 
+            var beerIcon = L.icon({
+            iconUrl: './brewmap/beer.png',
+
+            iconSize: [50, 50], // size of the icon
+            iconAnchor: [20, 40], // point of the icon which will correspond to marker's location
+            popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
+        });
+
 
         var mymap = L.map('mapid', {
-            center: [50.923, 6.94],
+            center: [50.923, -110],
             zoom: 5,
             layers: [streets, cities, DeLorme]
         });
@@ -129,25 +137,29 @@
 
 
 
-        var baseMaps = {
-            "Grayscale": grayscale,
-            "Satellite": satellite,
-            "Streets": streets,
-            "DeLorme": DeLorme
-        };
+        // var baseMaps = {
+        //     "Grayscale": grayscale,
+        //     "Satellite": satellite,
+        //     "Streets": streets,
+        //     "DeLorme": DeLorme
+        // };
 
         var overlayMaps = {
             "Cities": cities
         };
 
-        L.control.layers(baseMaps, overlayMaps).addTo(mymap);
 
 
         var baseMaps = {
-            "<span style='color: gray'>Grayscale</span>": grayscale,
+            // "<span style='color: gray'>Grayscale</span>": grayscale,
             "Streets": streets,
             "Satellite": satellite
         };
+        L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+
+        L.marker([51.03962, -114.036627], {
+            icon: beerIcon
+        }).addTo(mymap).bindPopup('<p class="title">My Current Location: Calgary, AB</p><img width="250px" src="images/cory1.jpg">');
     </script>
 
 
