@@ -26,7 +26,7 @@ var london = L.marker([51.5, -0.09]).bindPopup('<strong>London<strong><br><img w
     stevenage = L.marker([51.9, -0.263]).bindPopup('Stevenage'),
     bangkok = L.marker([13.72, 100.35]).bindPopup('Bangkok'),
     phuket = L.marker([7.83, 98.4]).bindPopup('Phuket'),
-    // calgary = L.marker([51, -114]).bindPopup('Calgary'),
+    calgary = L.marker([51, -114]).bindPopup('Calgary'),
     reddeer = L.marker([52.3, -113.8]).bindPopup('Red Deer'),
     edmonton = L.marker([53.5, -113.5]).bindPopup('Edmonton'),
     vancouver = L.marker([49.2, -123]).bindPopup('Vancouver'),
@@ -53,15 +53,16 @@ var london = L.marker([51.5, -0.09]).bindPopup('<strong>London<strong><br><img w
     saskatoon = L.marker([52.140902, -106.670105]).bindPopup('Saskatoon'),
     thunderBay = L.marker([48.403139, -89.245926]).bindPopup('Thunder Bay'),
     lasVegas = L.marker([36.165237, -115.146263]).bindPopup('Las Vegas'),
-    keyWest = L.marker([24.555204, -81.78039]).bindPopup('Key West');
+    keyWest = L.marker([24.555204, -81.78039]).bindPopup('Key West'),
+    grandeprairie = L.marker([55.16025, -118.789261]).bindPopup('Grande Prairie'),
+    fortmcmurray = L.marker([56.724629, -111.376648]).bindPopup('Fort McMurray');
 
 
 
 
 var cities = L.layerGroup([london, brussels, berlin, cologne, amsterdam, pinchercreek, dresden, prague, munich, innsbruck, venice, bern,
     verona, barcelona, madrid, nuremburg, frankfurt, hamburg, warsaw, dusseldorf, budapest, miskolc, istanbul, athens, agistri, stevenage,
-    bangkok, phuket,
-    //  calgary,
+    bangkok, phuket, calgary, grandeprairie, fortmcmurray,
      reddeer, edmonton, vancouver, kelowna, marrakech, paris, la, seattle, cancun, playa, miami, tampa, houston, phoenix, toronto,
     ottawa, montreal, quebec, halifax, charlottetown, orlando, regina, winnipeg, saskatoon, thunderBay, lasVegas, keyWest
 ]);
