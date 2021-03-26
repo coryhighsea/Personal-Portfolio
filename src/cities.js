@@ -55,15 +55,16 @@ var london = L.marker([51.5, -0.09]).bindPopup('<strong>London<strong><br><img w
     lasVegas = L.marker([36.165237, -115.146263]).bindPopup('Las Vegas'),
     keyWest = L.marker([24.555204, -81.78039]).bindPopup('Key West'),
     grandeprairie = L.marker([55.16025, -118.789261]).bindPopup('Grande Prairie'),
-    fortmcmurray = L.marker([56.724629, -111.376648]).bindPopup('Fort McMurray'),
-    deggendorf = L.marker([48.832922, 12.962648]).bindPopup('Deggendorf');
+    fortmcmurray = L.marker([56.724629, -111.376648]).bindPopup('Fort McMurray');
+    //deggendorf = L.marker([48.832922, 12.962648]).bindPopup('Deggendorf: My current location');
 
 
 
 
 var cities = L.layerGroup([london, brussels, berlin, cologne, amsterdam, pinchercreek, dresden, prague, munich, innsbruck, venice, bern,
     verona, barcelona, madrid, nuremburg, frankfurt, hamburg, warsaw, dusseldorf, budapest, miskolc, istanbul, athens, agistri, stevenage,
-    bangkok, phuket, calgary, grandeprairie, fortmcmurray, deggendorf,
+    bangkok, phuket, calgary, grandeprairie, fortmcmurray, 
+    //deggendorf,
      reddeer, edmonton, vancouver, kelowna, marrakech, paris, la, seattle, cancun, playa, miami, tampa, houston, phoenix, toronto,
     ottawa, montreal, quebec, halifax, charlottetown, orlando, regina, winnipeg, saskatoon, thunderBay, lasVegas, keyWest
 ]);
