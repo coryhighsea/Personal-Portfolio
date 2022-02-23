@@ -23,7 +23,7 @@ var london = L.marker([51.5, -0.09]).bindPopup('<strong>London<strong><br><img w
     istanbul = L.marker([41.01, 28.96]).bindPopup('Istanbul'),
     athens = L.marker([37.97, 23.7]).bindPopup('Athens'),
     agistri = L.marker([37.7, 23.34]).bindPopup('Agistri'),
-    stevenage = L.marker([51.9, -0.263]).bindPopup('Stevenage'),
+    stevenage = L.marker([51.9, -0.207109]).bindPopup('Stevenage'),
     bangkok = L.marker([13.72, 100.35]).bindPopup('Bangkok'),
     phuket = L.marker([7.83, 98.4]).bindPopup('Phuket'),
     calgary = L.marker([51, -114]).bindPopup('Calgary'),
@@ -55,15 +55,19 @@ var london = L.marker([51.5, -0.09]).bindPopup('<strong>London<strong><br><img w
     lasVegas = L.marker([36.165237, -115.146263]).bindPopup('Las Vegas'),
     keyWest = L.marker([24.555204, -81.78039]).bindPopup('Key West'),
     grandeprairie = L.marker([55.16025, -118.789261]).bindPopup('Grande Prairie'),
-    fortmcmurray = L.marker([56.724629, -111.376648]).bindPopup('Fort McMurray');
+    fortmcmurray = L.marker([56.724629, -111.376648]).bindPopup('Fort McMurray'),
     //deggendorf = L.marker([48.832922, 12.962648]).bindPopup('Deggendorf: My current location');
-
+    regensburg = L.marker([49.009445, 12.10041]).bindPopup('Regensburg'),
+    stuttgart = L.marker([48.78289, 9.183369]).bindPopup('Stuttgart'),
+    passau = L.marker([48.572026,13.456707]).bindPopup('Passau'),
+    lisbon = L.marker([38.709389, -9.136376]).bindPopup('Lisbon'),
+    porto = L.marker([41.148899, -8.607273]).bindPopup('Porto');
 
 
 
 var cities = L.layerGroup([london, brussels, berlin, cologne, amsterdam, pinchercreek, dresden, prague, munich, innsbruck, venice, bern,
     verona, barcelona, madrid, nuremburg, frankfurt, hamburg, warsaw, dusseldorf, budapest, miskolc, istanbul, athens, agistri, stevenage,
-    bangkok, phuket, calgary, grandeprairie, fortmcmurray, 
+    bangkok, phuket, calgary, grandeprairie, fortmcmurray, regensburg, stuttgart, passau, lisbon, porto,
     //deggendorf,
      reddeer, edmonton, vancouver, kelowna, marrakech, paris, la, seattle, cancun, playa, miami, tampa, houston, phoenix, toronto,
     ottawa, montreal, quebec, halifax, charlottetown, orlando, regina, winnipeg, saskatoon, thunderBay, lasVegas, keyWest
