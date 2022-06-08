@@ -60,14 +60,33 @@ var london = L.marker([51.5, -0.09]).bindPopup('<strong>London<strong><br><img w
     regensburg = L.marker([49.009445, 12.10041]).bindPopup('Regensburg'),
     stuttgart = L.marker([48.78289, 9.183369]).bindPopup('Stuttgart'),
     passau = L.marker([48.572026,13.456707]).bindPopup('Passau'),
-    lisbon = L.marker([38.709389, -9.136376]).bindPopup('Lisbon'),
-    porto = L.marker([41.148899, -8.607273]).bindPopup('Porto');
+    lisbon = L.marker([38.709389, -9.136376]).bindPopup('<b>Lisbon</b><br><img width="200px" src="images/lisbon.jpg">'),
+    porto = L.marker([41.148899, -8.607273]).bindPopup('<b>Porto</b><br><img width="200px" src="images/porto.jpg">');
+    freiburg = L.marker([47.987302, 7.853851]).bindPopup('<b>Freiburg</b><br><img width="200px" src="images/freiburg.jpg">');
+    strasbourg = L.marker([48.581247, 7.744675]).bindPopup('<b>Strasbourg</b><br><img width="200px" src="images/strasbourg.jpg">');
+    heidelberg = L.marker([49.410113, 8.685379]).bindPopup('<b>Heidelberg</b><br><img width="200px" src="images/heidelberg.jpg">');
+    göttingen = L.marker([51.535797, 9.93413]).bindPopup('<b>Göttingen</b><br><img width="200px" src="images/göttingen.jpg">');
+    tettenborn = L.marker([51.563954, 10.551832]).bindPopup('<b>Tettenborn</b><br><img width="200px" src="images/tettenborn.jpg">');
+    leipzig = L.marker([51.341781, 12.375455]).bindPopup('Leipzig');
+    salzburg = L.marker([47.802502, 13.029613]).bindPopup('Salzburg');
+    hallstatt = L.marker([47.55442, 13.644247]).bindPopup('Hallstatt');
+    königsee = L.marker([47.590206, 12.989016]).bindPopup('Königsee');
+
+
+
+
+
+
+
+
+
 
 
 
 var cities = L.layerGroup([london, brussels, berlin, cologne, amsterdam, pinchercreek, dresden, prague, munich, innsbruck, venice, bern,
     verona, barcelona, madrid, nuremburg, frankfurt, hamburg, warsaw, dusseldorf, budapest, miskolc, istanbul, athens, agistri, stevenage,
-    bangkok, phuket, calgary, grandeprairie, fortmcmurray, regensburg, stuttgart, passau, lisbon, porto,
+    bangkok, phuket, calgary, grandeprairie, fortmcmurray, regensburg, stuttgart, passau, lisbon, porto, freiburg, strasbourg, heidelberg, göttingen,
+    tettenborn,leipzig,salzburg,hallstatt,königsee,
     //deggendorf,
      reddeer, edmonton, vancouver, kelowna, marrakech, paris, la, seattle, cancun, playa, miami, tampa, houston, phoenix, toronto,
     ottawa, montreal, quebec, halifax, charlottetown, orlando, regina, winnipeg, saskatoon, thunderBay, lasVegas, keyWest
