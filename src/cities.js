@@ -56,38 +56,41 @@ var london = L.marker([51.5, -0.09]).bindPopup('<strong>London<strong><br><img w
     keyWest = L.marker([24.555204, -81.78039]).bindPopup('Key West'),
     grandeprairie = L.marker([55.16025, -118.789261]).bindPopup('Grande Prairie'),
     fortmcmurray = L.marker([56.724629, -111.376648]).bindPopup('Fort McMurray'),
-    //deggendorf = L.marker([48.832922, 12.962648]).bindPopup('Deggendorf: My current location');
+    deggendorf = L.marker([48.832922, 12.962648]).bindPopup('Deggendorf');
     regensburg = L.marker([49.009445, 12.10041]).bindPopup('Regensburg'),
     stuttgart = L.marker([48.78289, 9.183369]).bindPopup('Stuttgart'),
     passau = L.marker([48.572026,13.456707]).bindPopup('Passau'),
     lisbon = L.marker([38.709389, -9.136376]).bindPopup('<b>Lisbon</b><br><img width="200px" src="images/lisbon.jpg">'),
-    porto = L.marker([41.148899, -8.607273]).bindPopup('<b>Porto</b><br><img width="200px" src="images/porto.jpg">');
-    freiburg = L.marker([47.987302, 7.853851]).bindPopup('<b>Freiburg</b><br><img width="200px" src="images/freiburg.jpg">');
-    strasbourg = L.marker([48.581247, 7.744675]).bindPopup('<b>Strasbourg</b><br><img width="200px" src="images/strasbourg.jpg">');
-    heidelberg = L.marker([49.410113, 8.685379]).bindPopup('<b>Heidelberg</b><br><img width="200px" src="images/heidelberg.jpg">');
-    göttingen = L.marker([51.535797, 9.93413]).bindPopup('<b>Göttingen</b><br><img width="200px" src="images/göttingen.jpg">');
-    tettenborn = L.marker([51.563954, 10.551832]).bindPopup('<b>Tettenborn</b><br><img width="200px" src="images/tettenborn.jpg">');
-    leipzig = L.marker([51.341781, 12.375455]).bindPopup('Leipzig');
-    salzburg = L.marker([47.802502, 13.029613]).bindPopup('Salzburg');
-    hallstatt = L.marker([47.55442, 13.644247]).bindPopup('Hallstatt');
-    königsee = L.marker([47.590206, 12.989016]).bindPopup('Königsee');
-
-
-
-
-
-
-
-
-
-
+    porto = L.marker([41.148899, -8.607273]).bindPopup('<b>Porto</b><br><img width="200px" src="images/porto.jpg">'),
+    freiburg = L.marker([47.987302, 7.853851]).bindPopup('<b>Freiburg</b><br><img width="200px" src="images/freiburg.jpg">'),
+    strasbourg = L.marker([48.581247, 7.744675]).bindPopup('<b>Strasbourg</b><br><img width="200px" src="images/strasbourg.jpg">'),
+    heidelberg = L.marker([49.410113, 8.685379]).bindPopup('<b>Heidelberg</b><br><img width="200px" src="images/heidelberg.jpg">'),
+    göttingen = L.marker([51.535797, 9.93413]).bindPopup('<b>Göttingen</b><br><img width="200px" src="images/göttingen.jpg">'),
+    tettenborn = L.marker([51.563954, 10.551832]).bindPopup('<b>Tettenborn</b><br><img width="200px" src="images/tettenborn.jpg">'),
+    leipzig = L.marker([51.341781, 12.375455]).bindPopup('Leipzig'),
+    salzburg = L.marker([47.802502, 13.029613]).bindPopup('Salzburg'),
+    hallstatt = L.marker([47.55442, 13.644247]).bindPopup('Hallstatt'),
+    königsee = L.marker([47.590206, 12.989016]).bindPopup('Königsee'),
+    dublin = L.marker([53.327259, -6.25946]).bindPopup('Dublin'),
+    galway = L.marker([53.274924, -9.042091]).bindPopup('Galway'),
+    cork = L.marker([51.89552, -8.467197]).bindPopup('Cork'),
+    cobh = L.marker([51.852671, -8.292875]).bindPopup('Cobh'),
+    bruges = L.marker([51.199633, 3.227234]).bindPopup('Bruges'),
+    antwerp = L.marker([51.214882, 4.408264]).bindPopup('Antwerp'),
+    wurzberg = L.marker([49.781527, 9.939194]).bindPopup('Würzberg'),
+    otavalo = L.marker([0.23027, -78.26261]).bindPopup('Otavalo, Ecuador'),
+    quito = L.marker([-0.232024, -78.518165]).bindPopup('Quito, Ecuador'),
+    cuenca = L.marker([-2.906194, -78]).bindPopup('Cuenca, Ecuador'),
+    krakow = L.marker([50.058606, 19.936742]).bindPopup('Krakow, Poland'),
+    florence = L.marker([43.771409, 11.256961]).bindPopup('Florence, Italy'),
+    vienna = L.marker([48.20746, 16.369698]).bindPopup('Vienna, Austria');
 
 
 var cities = L.layerGroup([london, brussels, berlin, cologne, amsterdam, pinchercreek, dresden, prague, munich, innsbruck, venice, bern,
     verona, barcelona, madrid, nuremburg, frankfurt, hamburg, warsaw, dusseldorf, budapest, miskolc, istanbul, athens, agistri, stevenage,
     bangkok, phuket, calgary, grandeprairie, fortmcmurray, regensburg, stuttgart, passau, lisbon, porto, freiburg, strasbourg, heidelberg, göttingen,
-    tettenborn,leipzig,salzburg,hallstatt,königsee,
-    //deggendorf,
+    tettenborn, leipzig, salzburg, hallstatt, königsee, dublin, galway, cork, cobh, bruges, antwerp, wurzberg, otavalo, quito, cuenca,
+    deggendorf, krakow, florence, vienna,
      reddeer, edmonton, vancouver, kelowna, marrakech, paris, la, seattle, cancun, playa, miami, tampa, houston, phoenix, toronto,
     ottawa, montreal, quebec, halifax, charlottetown, orlando, regina, winnipeg, saskatoon, thunderBay, lasVegas, keyWest
 ]);
