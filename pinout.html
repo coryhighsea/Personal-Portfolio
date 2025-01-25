@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Pinout Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .filters {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filters button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .filters button.active {
+            background-color: #0056b3;
+        }
+        .pinout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .pin {
+            padding: 15px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .pin:hover {
+            background-color: #f0f0f0;
+        }
+        .gpio { border-left: 5px solid #a6d8ff; }
+        .adc { border-left: 5px solid #ffa6a6; }
+        .i2c { border-left: 5px solid #a6ffb8; }
+        .power { border-left: 5px solid #ffd6a6; }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .modal-content {
+            text-align: center;
+        }
+        .modal-close {
+            display: block;
+            margin: 10px auto 0;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>ESP32 Pinout Generator</h1>
+
+    <!-- Filter Buttons -->
+    <div class="filters">
+        <button onclick="filterPins('all')" class="active">All</button>
+        <button onclick="filterPins('gpio')">GPIO</button>
+        <button onclick="filterPins('adc')">ADC</button>
+        <button onclick="filterPins('i2c')">I2C</button>
+        <button onclick="filterPins('power')">Power</button>
+    </div>
+
+    <!-- Pinout Grid -->
+    <div class="pinout" id="pinout">
+        <!-- Pins will be dynamically inserted here -->
+    </div>
+
+    <!-- Modal for Pin Details -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="pinModal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Pin Details</h2>
+            <p><strong>Function:</strong> <span id="modalFunction"></span></p>
+            <p><strong>Description:</strong> <span id="modalDescription"></span></p>
+            <button class="modal-close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Pin Data
+        const pinsData = [
+            { number: 1, name: "GPIO 2", function: "gpio", description: "General-purpose input/output pin." },
+            { number: 2, name: "ADC1_CH0", function: "adc", description: "Analog-to-digital converter channel 0." },
+            { number: 3, name: "SDA", function: "i2c", description: "I2C data line." },
+            { number: 4, name: "SCL", function: "i2c", description: "I2C clock line." },
+            { number: 5, name: "3.3V", function: "power", description: "3.3V power supply." },
+            { number: 6, name: "GND", function: "power", description: "Ground pin." },
+            // Add more pins here
+        ];
+
+        // Render Pins
+        function renderPins(filter = "all") {
+            const pinout = document.getElementById("pinout");
+            pinout.innerHTML = ""; // Clear existing pins
+
+            pinsData.forEach(pin => {
+                if (filter === "all" || pin.function === filter) {
+                    const pinElement = document.createElement("div");
+                    pinElement.className = `pin ${pin.function}`;
+                    pinElement.textContent = pin.name;
+                    pinElement.title = `Pin ${pin.number}: ${pin.description}`;
+                    pinElement.addEventListener("click", () => openModal(pin));
+                    pinout.appendChild(pinElement);
+                }
+            });
+        }
+
+        // Filter Pins
+        function filterPins(filter) {
+            renderPins(filter);
+            const buttons = document.querySelectorAll(".filters button");
+            buttons.forEach(button => button.classList.remove("active"));
+            document.querySelector(`.filters button[onclick="filterPins('${filter}')"]`).classList.add("active");
+        }
+
+        // Open Modal
+        function openModal(pin) {
+            document.getElementById("modalTitle").textContent = `Pin ${pin.number}: ${pin.name}`;
+            document.getElementById("modalFunction").textContent = pin.function.toUpperCase();
+            document.getElementById("modalDescription").textContent = pin.description;
+            document.getElementById("modalOverlay").style.display = "block";
+            document.getElementById("pinModal").style.display = "block";
+        }
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById("modalOverlay").style.display = "none";
+            document.getElementById("pinModal").style.display = "none";
+        }
+
+        // Initial Render
+        renderPins();
+    </script>
+</body>
+</html>
