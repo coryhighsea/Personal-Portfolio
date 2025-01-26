@@ -1,101 +1,113 @@
-import Image from "next/image";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gray-900 py-10 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        {/* Header Section */}
+        <header className="text-center">
+          <h1 className="text-4xl font-bold text-white">Cory Hisey</h1>
+          <p className="mt-2 text-lg text-gray-300">Embedded Software Developer | Open Source Enthusiast</p>
+          <nav className="mt-4">
+            <Link href="#projects" className="text-blue-400 hover:text-blue-300 mr-4">
+              Projects
+            </Link>
+            <Link href="#about" className="text-blue-400 hover:text-blue-300">
+              About Me
+            </Link>
+          </nav>
+        </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        {/* About Me Section */}
+        <section id="about" className="mt-12">
+          <h2 className="text-2xl font-bold text-white">About Me</h2>
+          <p className="mt-4 text-gray-300">
+          Hi, I'm Cory Hisey, an embedded software developer with a strong passion for building innovative hardware and software solutions. 
+          I specialize in developing firmware and applications for embedded systems, with hands-on experience working with ESP32 boards, 
+          NVIDIA Jetson Nano, and other microcontrollers. My expertise includes programming in C++ for low-level system development, 
+          as well as creating user-friendly interfaces using QT/QML and JavaScript.
+        </p>
+        <p className="mt-4 text-gray-300">
+          I thrive on solving complex problems and bringing ideas to life through code. Whether it's optimizing performance for 
+          resource-constrained devices or designing intuitive UIs, I enjoy every step of the development process. My work often 
+          bridges the gap between hardware and software, enabling seamless interactions between devices and users.
+        </p>
+        <p className="mt-4 text-gray-300">
+          Outside of my professional work, I'm an active member of the Maker community and a passionate 3D printing enthusiast. 
+          I love experimenting with new technologies, building DIY projects, and sharing my knowledge with others. From designing 
+          custom 3D-printed parts to integrating them into functional prototypes, I find joy in the creative and technical challenges 
+          that come with being a Maker.
+        </p>
+        <p className="mt-4 text-gray-300">
+          I'm always excited to collaborate on new projects, explore emerging technologies, and contribute to the ever-evolving 
+          world of embedded systems and IoT. Let's connect and build something amazing together!
+        </p>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="mt-12">
+          <h2 className="text-2xl font-bold text-white">Projects</h2>
+          <div className="mt-6 space-y-6">
+            {/* Project 1 */}
+            <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-white">Project One</h3>
+              <p className="mt-2 text-gray-300">
+                A web application built with Next.js and Tailwind CSS for managing tasks and projects efficiently.
+              </p>
+              <Link
+                href="https://github.com/yourusername/project-one"
+                className="mt-4 inline-block text-blue-400 hover:text-blue-300"
+              >
+                View on GitHub
+              </Link>
+            </div>
+
+            {/* Project 2 */}
+            <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-white">Project Two</h3>
+              <p className="mt-2 text-gray-300">
+                An open-source API built with Node.js and Express for managing user authentication and authorization.
+              </p>
+              <Link
+                href="https://github.com/yourusername/project-two"
+                className="mt-4 inline-block text-blue-400 hover:text-blue-300"
+              >
+                View on GitHub
+              </Link>
+            </div>
+
+            {/* Project 3 */}
+            <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-white">Project Three</h3>
+              <p className="mt-2 text-gray-300">
+                A React-based portfolio template for developers to showcase their skills and projects.
+              </p>
+              <Link
+                href="https://github.com/yourusername/project-three"
+                className="mt-4 inline-block text-blue-400 hover:text-blue-300"
+              >
+                View on GitHub
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer Section */}
+        <footer className="mt-12 text-center text-gray-300">
+          <p>© 2023 Cory Hisey. All rights reserved.</p>
+          <p className="mt-2">
+            Connect with me on{' '}
+            <Link href="https://twitter.com/yourusername" className="text-blue-400 hover:text-blue-300">
+              Twitter
+            </Link>{' '}
+            or{' '}
+            <Link href="https://linkedin.com/in/yourusername" className="text-blue-400 hover:text-blue-300">
+              LinkedIn
+            </Link>
+            .
+          </p>
+        </footer>
+      </div>
     </div>
   );
 }
