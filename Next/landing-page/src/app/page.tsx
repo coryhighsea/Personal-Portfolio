@@ -1,5 +1,5 @@
-import Header from './components/header';
-import Footer from './components/footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import ProjectCard from './components/ProjectCard';
 
 export default function Home() {
@@ -13,12 +13,13 @@ export default function Home() {
         {/* Hero Section */}
         <section className="text-center mb-20">
           <h1 className="text-6xl font-bold mb-4">Cory Hisey</h1>
-          <p className="text-xl text-gray-400">Embedded Software Developer | Maker</p>
+          <p className="text-xl text-gray-400">Embedded Software Developer | Open Source Enthusiast</p>
         </section>
 
         {/* About Section */}
         <section id="about" className="mb-20">
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
+          <br></br>
           <p className=" mt-4 text-gray-300 leading-relaxed">
           Hi, I'm Cory Hisey, an embedded software developer with a strong passion for building innovative hardware and software solutions. 
           I specialize in developing firmware and applications for embedded systems, with hands-on experience working with ESP32 boards, 
@@ -35,10 +36,6 @@ export default function Home() {
           I love experimenting with new technologies, building DIY projects, and sharing my knowledge with others. From designing 
           custom 3D-printed parts to integrating them into functional prototypes, I find joy in the creative and technical challenges 
           that come with being a Maker.
-        </p>
-        <p className="mt-4 text-gray-300 leading-relaxed">
-          I'm always excited to collaborate on new projects, explore emerging technologies, and contribute to the ever-evolving 
-          world of embedded systems and IoT. Let's connect and build something amazing together!
         </p>
         </section>
 
@@ -93,19 +90,19 @@ export default function Home() {
           </p>
           <div className="flex space-x-4">
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:cjhisey@gmail.com"
               className="text-blue-400 hover:text-blue-600"
             >
               Email
             </a>
             <a
-              href="https://twitter.com/yourusername"
+              href="https://www.youtube.com/@coryhisey8431"
               className="text-blue-400 hover:text-blue-600"
             >
-              Twitter
+              YouTube
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/cory-hisey-730a8a59/"
               className="text-blue-400 hover:text-blue-600"
             >
               LinkedIn
